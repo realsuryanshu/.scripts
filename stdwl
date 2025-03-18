@@ -1,0 +1,7 @@
+#!/bin/sh
+swww-daemon &
+wlsunset -t 3000K &
+dunst &
+tail -f /tmp/wobpipe | wob &
+wl-paste --type text --watch cliphist store &  # Stores only text data
+wl-paste --type image --watch cliphist store & # Stores only image data

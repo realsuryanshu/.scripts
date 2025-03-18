@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while [ $pdf -z ]
+do
+	category=$(ls ~/Documents/pdfs | mew) && cd ~/Documents/pdfs/"$category"
+	[ $category -z ] || pdf=$(ls ~/Documents/pdfs/"$category" | mew)
+	[ $category -z ] && [ $pdf -z ] && exit
+done
+
+zathura ~/Documents/pdfs/"$category"/"$pdf"

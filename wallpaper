@@ -1,0 +1,8 @@
+#!/bin/bash
+
+wallpaper=$(ls ~/Pictures/wallpapers | mew)
+
+[ -z "$wallpaper" ] || {
+    swww img ~/Pictures/wallpapers/$wallpaper --transition-type none
+}
+

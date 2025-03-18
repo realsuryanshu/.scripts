@@ -1,0 +1,22 @@
+#!/bin/sh
+
+dayanddate () {
+    LC_TIME="hu_HU.UTF-8" date '+%G. %B. %e, %A'
+}
+
+battery () {
+    ~/.scripts/statusbarsetup/battery
+}
+
+wifi () {
+    ~/.scripts/statusbarsetup/wifi
+}
+
+timedate () {
+    date '+%I:%M:%S %p'
+}
+
+{ while true; do
+    echo "                                                                 $(dayanddate)                                                              $(battery) $(wifi) $(timedate)"
+    sleep 1 
+done; } | dwl -s "stdwl"

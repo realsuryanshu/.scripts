@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ffplay -framerate 30 -probesize 32 -sync video -fflags nobuffer -flags low_delay -window_title Webcam /dev/video0
+
+
